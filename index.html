@@ -7,14 +7,19 @@
     <title>joguinho :D</title>
 </head>
 <body>
-    <div class="container">
-        <div class="containerJogo">
-            <div class="coisitas" id="coisinhas"></div>
-            <div id="caixa">
-                <img src="assets/cesta.png" alt="" class="cesta">
-            </div>
+    <div class="tela-inicio">
+        <button id="botao-iniciar">Iniciar Jogo</button>
+        <div id="contagem-regressiva"></div>
+    </div>
+    
+    <div class="container" style="display:none;">
+    <div class="containerJogo">
+        <div id="coisinhas"></div> <!-- Corrigi o ID aqui -->
+        <div id="caixa">
+            <img src="assets/cesta.png" alt="Cesta" class="cesta">
         </div>
     </div>
+</div>
 </body>
 <script src="script.js"></script>
 </html>
