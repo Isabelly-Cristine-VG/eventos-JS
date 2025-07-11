@@ -1,23 +1,33 @@
 html {
     overflow: hidden;
+    background-color: rgb(55, 107, 221);
 }
 
-.container {
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerJogo {
     display: flex;
-    min-height: 100vh;
-    min-width: 100vw; /* Corrigido de vh para vw */
+    width: 50rem; 
+    height: 40rem;
     align-items: center;
+    justify-content: center;
+    background-color: rgb(149, 181, 250);
+    position: relative;
+    overflow: hidden;
 }
 
 #caixa {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    min-height: 100vh;
-    min-width: 100vh;
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     cursor: grab;
     padding-bottom: 10%;
 }
@@ -28,7 +38,7 @@ html {
 }
 
 #coisinhas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -39,15 +49,13 @@ html {
 @keyframes fall {
     0% {
         top: -100px;
-        transform: translateX(-50%) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
     }
     100% {
-        top: 100vh;
-        transform: translateX(-50%) rotate(360deg); 
+        top: 100%;
+        transform: translateX(0) rotate(360deg); 
     }
 }
-
-/* Estilos existentes mantidos */
 
 #score-display {
   position: fixed;
@@ -73,7 +81,6 @@ html {
   }
 }
 
-/* Adicione isso se quiser que itens perigosos tenham uma aparência diferente */
 img[src*="knife.png"], 
 img[src*="skull"] {
   filter: drop-shadow(0 0 5px red);
