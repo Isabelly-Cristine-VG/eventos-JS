@@ -165,8 +165,8 @@ function verificarColisao(img, pontos) {
     img.style.transform = 'scale(1.5) rotate(360deg)';
     img.style.opacity = '0';
 
-    // Remove o item após 300ms
-    setTimeout(() => img.remove(), 300);
+    // Remove o item após 600ms
+    setTimeout(() => img.remove(), 600);
 
     // Mostra feedback visual dos pontos
     const feedback = document.createElement('div');

@@ -108,6 +108,20 @@ body {
         radial-gradient(circle at 90% 80%, rgba(255,255,255,0.3) 0%, transparent 20%);
 }
 
+.maquina{
+    width: 33rem; 
+    height: 40rem;
+    background-color: #c987ff; 
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 5px solid #FFB7B2; 
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.3) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255,255,255,0.3) 0%, transparent 20%);
+}
+
 /* Cesta*/
 #caixa {
     position: absolute;
