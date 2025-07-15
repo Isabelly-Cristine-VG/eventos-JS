@@ -1,204 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Garra Minimalista</title>
-    <style>
-        body {
-            margin: 0;
-            background: #ffffff;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: sans-serif;
-        }
-
-        .container {
-            position: relative;
-            width: 120px;
-            height: 400px;
-        }
-
-        .garra {
-            position: absolute;
-            top: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: top 1s ease-in-out;
-        }
-
-        .eixo-central {
-            width: 20px;
-            height: 170px;
-            background: #888;
-            position: absolute;
-            bottom: 15px;
-            border-radius: 20px;
-        }
-
-        .bolinha {
-            position: relative;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: #4d4d4d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-            top: 20px;
-        }
-
-        .dedo {
-            width: 6px;
-            height: 60px;
-            background: #777;
-            border-radius: 4px;
-            position: absolute;
-            top: 60px;
-            transform-origin: top center;
-            transition: transform 0.4s ease;
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-top: 20px solid #666;
-        }
-
-        .estrutura {
-            width: 6px;
-            height: 67px;
-            background: #3f3f3f;
-            border-radius: 6px;
-            position: absolute;
-            top: 100%;
-            transform-origin: top center;
-            transition: transform 0.4s ease;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            
-        }
-
-        .dedo1{
-            left: 0;
-            transform: rotate(70deg);
-        }
-        .dedo2{
-            right: 0;
-            transform: rotate(-70deg);
-        }
-
-        .ponta1 {
-            left: 0;
-            transform: rotate(-50deg);
-        }
-
-        .ponta2 {
-            right: 0;
-            transform: rotate(50deg);
-        }
-
-
-        .fechada .ponta1 {
-            transform: rotate(-100deg);
-        }
-
-        .fechada .ponta2 {
-            transform: rotate(100deg);
-        }
-
-
-        button {
-            position: absolute;
-            bottom: -80px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            background: #ff6384;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #e05570;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-        <div class="garra" id="garra">
-            <div class="eixo-central"></div>
-
-            <div class="bolinha">
-                <div class="estrutura dedo1">
-                    <div class="dedo ponta1"></div>
-                </div>
-                <div class="estrutura dedo2">
-                    <div class="dedo ponta2"></div>
-                </div>
-            </div>
-        </div>
-
-
-        <button onclick="animarGarra()">Ativar Garra</button>
-    </div>
-
-    <script>
-        function animarGarra() {
-            const garra = document.getElementById('garra');
-            garra.style.top = '260px'; // desce
-
-            setTimeout(() => {
-                garra.classList.add('fechada'); // fecha
-            }, 1000);
-
-            setTimeout(() => {
-                garra.style.top = '120px'; // sobe
-            }, 1800);
-
-            setTimeout(() => {
-                garra.classList.remove('fechada'); // abre
-            }, 2700);
-        }
-    </script>
-
-</body>
-
-</html>
-
-
-<!--<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="tela-inicio">
         <button id="botao-iniciar">Iniciar Jogo</button>
         <div id="contagem-regressiva"></div>
     </div>
-
     <div class="container" style="display:none;">
-        <div class="maquina">
+        <div id="colecao">
+            <h4>Pelúcias capturadas:</h4>
+            <div id="pelucias-capturadas"></div>
+        </div>
 
+        <div class="maquina">
+            <div class="telaMaquina">
+                <div class="garra" id="garra">
+                    <div class="eixo-central"></div>
+
+                    <div class="bolinha">
+                        <div class="estrutura dedo1">
+                            <div class="dedo ponta1"></div>
+                        </div>
+                        <div class="estrutura dedo2">
+                            <div class="dedo ponta2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="saida"></div>
+            </div>
+            <button onclick="animarGarra()" class="ativarGarra">Ativar Garra (ou Espaço)</button>
         </div>
     </div>
 </body>
 <script src="maquina.js"></script>
-</html>-->
+
+</html>
