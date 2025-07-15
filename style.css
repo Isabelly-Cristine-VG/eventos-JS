@@ -328,7 +328,7 @@ img[src*="skull"] {
 .eixo-central {
     width: 13px;
     height: 470px;
-    background: #888;
+    background: #978fb3;
     position: absolute;
     bottom: 25px;
     border-radius: 20px;
@@ -339,7 +339,7 @@ img[src*="skull"] {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #4d4d4d;
+    background: #6b5f97;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -350,7 +350,7 @@ img[src*="skull"] {
 .dedo {
     width: 13px;
     height: 40px;
-    background: #777;
+    background: #b7a6f5;
     border-radius: 7px;
     position: absolute;
     top: 55px;
@@ -359,13 +359,13 @@ img[src*="skull"] {
     transition: transform 0.4s ease;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 20px solid #666;
+    border-top: 20px solid #8c85eb;
 }
 
 .estrutura {
     width: 8px;
     height: 67px;
-    background: #3f3f3f;
+    background: #585597;
     border-radius: 9px;
     position: absolute;
     top: 20px;
@@ -407,25 +407,79 @@ img[src*="skull"] {
 }
 
 
-.ativarGarra {
+.joystick-classic {
     position: absolute;
-    bottom: 80px;
-    left: 50%;
+    bottom: 10px;
+    left: 20%;
     transform: translateX(-50%);
-    padding: 10px 20px;
-    background: #ff6384;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s;
+    width: 100px;
+    height: 100px;
 }
 
-.ativarGarra:hover {
-    background: #e05570;
+.joystick-base {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 20px;
+    background: #f13ec5;
+    border-radius: 50%;
+}
+
+.joystick-stick {
+    position: absolute;
+    width: 25px;
+    height: 80px;
+    background: linear-gradient(to right, #ffb9f3, #e799da);
+    border-radius: 7px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.joystick-ball {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #6039ce;
+    border-radius: 50%;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    z-index: 3;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 2px 3px rgba(255, 255, 255, 0.2);
+}
+
+.esquerda {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    background-color: #6039ce;
+    color: #fcf4ff;
+    align-items: center;
+    justify-content: center;
+    font-size: 85px;
+    border-radius: 30px;
+}
+
+.direita {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 70%;
+    bottom: 50px;
+    background-color: #6039ce;
+    color: #fcf4ff;
+    align-items: center;
+    justify-content: center;
+    font-size: 85px;
+    border-radius: 30px;
 }
 
 .dedo::after {
@@ -438,7 +492,7 @@ img[src*="skull"] {
     height: 0;
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
-    border-top: 30px solid #777;
+    border-top: 30px solid #b7a6f5;
 }
 
 /* Estilos para as pelúcias */
@@ -472,7 +526,7 @@ img[src*="skull"] {
     left: 10px;
     background-color: rgba(255, 255, 255, 0.6);
     border: 3px dashed #8a59b3;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -485,7 +539,7 @@ img[src*="skull"] {
     border-radius: 16px;
     padding: 12px;
     z-index: 999;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 150px;
     font-size: 14px;
     font-family: 'Comic Sans MS', cursive;
@@ -507,4 +561,22 @@ img[src*="skull"] {
     background: white;
 }
 
+.pelucia-capturada {
+    position: absolute;
+    transform: scale(0.7);
+    transition: all 0.3s ease-out;
+    z-index: 2;
+    /* Entre os dedos */
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+    animation: balancar 0.8s infinite alternate;
+}
 
+@keyframes balancar {
+    from {
+        transform: scale(0.7) rotate(-5deg);
+    }
+
+    to {
+        transform: scale(0.7) rotate(5deg);
+    }
+}
