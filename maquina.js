@@ -109,7 +109,7 @@ function gerarPelucias() {
     peluciasNaTela.forEach(p => p.element.remove());
     peluciasNaTela = [];
 
-    const quantidade = 10;
+    const quantidade = 14;
     for (let i = 0; i < quantidade; i++) {
         let tentativas = 0;
         let novaPelucia;
@@ -149,7 +149,7 @@ function animarGarra() {
     if (!jogoRodando || garraComPelucia) return;
 
     const garra = document.getElementById('garra');
-    garra.style.top = `${ALTURA_PELUCIA + 50}px`;
+    garra.style.top = `${ALTURA_PELUCIA - 80}px`;
 
     setTimeout(() => {
         garra.classList.add('fechada');
